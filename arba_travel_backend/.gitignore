@@ -42,3 +42,5 @@ build/
 # Ignore any specific cache or unnecessary directories
 *.egg-info/
 .eggs/
+
+.db.sqlite3
