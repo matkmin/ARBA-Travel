@@ -1,46 +1,32 @@
-# Python-related files
+# Python
 *.pyc
 *.pyo
-__pycache__/
 *.pyd
-*.swp
-
-# Environment variables
-.env
-
-# Virtual environment
-venv/
-env/
-.UEMS/
-
-# Django-related files
-db.sqlite3
-media/
-staticfiles/
-
-# Logs and local files
+__pycache__/
+*.sqlite3
 *.log
 *.pot
-*.mo
+*.py[cod]
 
-# VSCode and other editor files
+# Django
+*.db
+*.log
+*.pot
+*.pyc
+__pycache__/
+media/
+static/
+
+# React
+node_modules/
+build/
+*.log
+
+# VS Code
 .vscode/
-.idea/
-*.sublime-workspace
-*.sublime-project
 
-# MacOS-related files
+# MacOS
 .DS_Store
 
-# Node modules (if using React or any frontend package)
-node_modules/
-
-# Build files
-dist/
-build/
-
-# Ignore any specific cache or unnecessary directories
-*.egg-info/
-.eggs/
-
-.db.sqlite3
+# Environment Files
+.env
