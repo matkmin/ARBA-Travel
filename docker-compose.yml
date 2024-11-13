@@ -1,0 +1,41 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: arba_travel_backend/DockerFile
+    container_name: django_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./arba_travel_backend:/app
+    environment:
+      - DEBUG=1
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: .
+      dockerfile: arba_travel_frontend/DockerFile
+    container_name: react_frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./arba_travel_frontend:/app
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:13
+    container_name: postgres_db
+    environment:
+      POSTGRES_DB: travel_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
